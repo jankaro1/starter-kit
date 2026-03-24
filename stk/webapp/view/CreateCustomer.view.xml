@@ -1,0 +1,27 @@
+<mvc:View    xmlns:launchpad="sap.ushell.ui.launchpad"
+    controllerName="stk.stk.controller.CreateCustomer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f = "sap.ui.layout.form"
+    xmlns="sap.m"
+    displayBlock="true">
+<Page id = "CreateCustomer" 
+      title="Create New Customer"
+      showNavButton="true"
+      navButtonPress=".onNavBack">
+    <headerContent>
+    <Button text = "Create Customer" press = "creatingProcess" class="sapUiMediumMarginBegin"/>
+    </headerContent>
+    <VBox class = "sapUiSmallMargin">
+        <f:SimpleForm id = "SimpleForm"
+            editable = "true"
+            layout="ResponsiveGridLayout">
+            <f:content>
+                <Label text="Customer ID"/>
+                <Input id = "CustomerID" value = "{CustomerID}"/>
+                <Label text="Customer Name"/>
+                <Input id = "CustomerName" value = "{CustomerName}"/>
+            </f:content>
+        </f:SimpleForm>
+    </VBox>
+</Page>
+</mvc:View>

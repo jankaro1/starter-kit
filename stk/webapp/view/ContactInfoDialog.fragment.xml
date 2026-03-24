@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="contactDialog" title="{i18n>contactDetails}">
+    <VBox >
+    <Text  text = "Name:"/>
+    <Text text = "{ContactName}"/>
+    <Text text = "Contact Title:"/>
+    <Text text = "{ContactTitle}"/>
+    <Text text = "Address:"/>
+    <Text text = "{Address}"/>
+    <Text text = "Phone"/>
+    <Text text = "{Phone}"/>
+    <Button text = "Close" press = "onClose"/>
+
+    </VBox>
+    </Dialog>
+</core:FragmentDefinition>

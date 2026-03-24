@@ -1,0 +1,54 @@
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+    controllerName="stk.stk.controller.Performance"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page
+        id="Performance"
+        title="Performance"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <content>
+            <Table id="Performance_Tab" items = "{
+    path: '/Employees',
+    parameters: { expand: 'Orders' }
+    }">
+                <columns>
+                    <Column id = "nameID">
+                        <Text text = "Name"/>
+                    </Column>
+                    <Column>
+                        <Text text = "Position"/>
+                    </Column>
+                    <Column id = "ordersID">
+        
+                        <Text text = "Orders"/>
+                    </Column>
+                    <Column id = "actionsID">
+                        <Text text = "Actions"/>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{= ${FirstName} + ' ' + ${LastName} }"/>
+                            <Text text="{= ${Title}}"/>
+                            <Text text="{= ${Orders}.length}"/>
+                                <FlexBox
+                                    direction="Row"
+                                    justifyContent="SpaceAround"
+                                    alignItems="Center">
+                                        <items>
+                                            <Button text="Motivate"/>
+                                            <Button text="Fire"/>
+                                        </items>
+                                </FlexBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

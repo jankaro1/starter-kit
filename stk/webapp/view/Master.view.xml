@@ -1,0 +1,13 @@
+<mvc:View controllerName="stk.stk.controller.Master"
+xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.m.table">
+<Shell id="shell">
+<App id="app1">
+    <Page id="page" title="{i18n>title}">
+        
+    </Page>
+    </App>
+    </Shell>
+</mvc:View>

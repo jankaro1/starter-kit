@@ -1,0 +1,40 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="stk.stk.controller.CustomerList" displayBlock="true">
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="CustomerList"
+          showNavButton="true" navButtonPress="handleNavButtonPress" title="CompanyName">
+          <content>
+        <Carousel height ="50%">
+        <pages>
+        <Image width = "80%" height = "100%" src = "https://cdn.pixabay.com/photo/2016/08/19/23/53/dog-1606600_1280.jpg"/>
+        <Image width = "50%" height = "100%" src = "https://i.pinimg.com/originals/77/17/69/77176982b29a41ad1c2fb1c82ab3e6fb.jpg?nii=t"/>
+        <Image width = "50%" height = "100%" src = "https://companieslogo.com/img/orig/CAP.PA-9b4110b0.png?t=1720244491"/>
+        </pages>
+        <customLayout>
+            <CarouselLayout visiblePagesCount ="2"/>
+        </customLayout>
+        </Carousel>
+        <Button id = "SortCountryButton" press = "onSortByCountry" icon = "sap-icon://sort"/>
+        <Button id = "ExportDataButton" press = "onPressGenerateExcelReport" icon = "sap-icon://action" text = "Export Customers List"/>
+        <Button id = "AddNewCustomer" press = "createNew" icon = "sap-icon://add" text = "Add a new customer"/>
+        <Button id = "EmployeeMotivation" press = "showEmployees" text = "Manage employees"/>
+     <!--   <ColumnListItem type = "Navigation" press = "onCustomerPress"> </ColumnListItem> -->
+        <Input id = "companyNameFilterInput" submit = "setCompanyFilter"/>
+        <Table id="customersTableId"
+        items="{/Customers}">
+<columns>
+    <Column >
+        <Label text="{i18n>companyName}"/>
+    </Column>
+    <Column>
+        <Label text="{i18n>country}"/>
+    </Column>
+</columns>
+<items>
+    <ColumnListItem type= "Navigation" press = "onCustomerPress" id="_IDGenColumnListItem1" >
+        <Text id="_IDGenText" text="{CompanyName}"/>
+        <Text id="_IDGenText1" text="{=${Country} === 'USA' ? 'United States of America' : ${Country}}"/>
+    </ColumnListItem>
+</items>
+</Table>
+  </content>
+    </Page>
+</mvc:View>

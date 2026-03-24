@@ -1,0 +1,18 @@
+<mvc:View controllerName="stk.starterkit.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell1">
+    <App id="app1">
+    <pages>
+    <Page id="page" title="{i18n>title}">
+        <content>
+       
+        <Image src = "https://cdn.pixabay.com/photo/2016/08/19/23/53/dog-1606600_1280.jpg"/>
+        
+        </content>
+    </Page>
+    </pages>
+    </App>
+    </Shell>
+</mvc:View>

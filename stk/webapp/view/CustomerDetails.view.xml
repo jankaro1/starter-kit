@@ -1,0 +1,58 @@
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+    controllerName="stk.stk.controller.CustomerDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page
+        id="CustomerDetails"
+        title="{CompanyName}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <headerContent>
+            <Button id="ShowContactInfo" text="Show Contact Info" press="showContactInfo"/>
+        </headerContent>
+        <content>
+
+            <Table id="ordersTable" items="{
+            path: 'Orders',
+    parameters: { expand: 'Employee' }}">
+                <columns>
+                    <Column>
+                        <Text text="Order ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee" />
+                    </Column>
+                    <Column>
+                        <Text text="Order Date" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{= ${OrderID}}" />
+                            <Text text="{= ${Employee/FirstName}[0] + '. ' + ${Employee/LastName}}" />
+                            <Text
+                                text="{
+                                    path: 'OrderDate',
+                                    type: 'sap.ui.model.type.DateTime',
+                                    formatOptions: { style: 'medium' }
+                                }"
+                            />
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
+
+
