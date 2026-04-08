@@ -1,6 +1,6 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="stk.stk.controller.CustomerList" displayBlock="true">
     <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="CustomerList"
-          showNavButton="true" navButtonPress="handleNavButtonPress" title="CompanyName">
+          showNavButton="true" navButtonPress="handleNavButtonPress" title="Full list of Customers">
           <content>
         <Carousel height ="50%">
         <pages>
@@ -22,10 +22,10 @@
         items="{/Customers}">
 <columns>
     <Column >
-        <Label text="{i18n>companyName}"/>
+        <Label text="{i18n>Company Name}"/>
     </Column>
     <Column>
-        <Label text="{i18n>country}"/>
+        <Label text="{i18n>Country}"/>
     </Column>
 </columns>
 <items>

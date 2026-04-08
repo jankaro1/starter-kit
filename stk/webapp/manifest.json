@@ -43,93 +43,97 @@
       "phone": true
     }
   },
-
-"sap.ui5": {
-  "flexEnabled": false,
-  "dependencies": {
-    "minUI5Version": "1.120.43",
-    "libs": {
-      "sap.m": {},
-      "sap.ui.core": {}
-    }
-  },
-  "rootView": {
-    "viewName": "stk.stk.view.App",
-    "type": "XML",
-    "id": "app2",
-    "async": true
-  },
-  "contentDensities": {
-    "compact": true,
-    "cozy": true
-  },
-  "models": {
-    "i18n": {
-      "type": "sap.ui.model.resource.ResourceModel",
-      "settings": {
-        "bundleName": "stk.stk.i18n.i18n"
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.43",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
       }
     },
-    "": {
-      "type": "sap.ui.model.odata.v2.ODataModel",
-      "dataSource": "mainService",
-      "preload": false,
-      "settings": {
-        "defaultBindingMode": "TwoWay",
-        "refreshAfterChange": false,
-        "useBatch": false
+    "rootView": {
+      "viewName": "stk.stk.view.App",
+      "type": "XML",
+      "id": "app2",
+      "async": true
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "stk.stk.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mainService",
+        "preload": false,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "refreshAfterChange": false,
+          "useBatch": false
+        }
+      },
+      "CustomerProperties": {
+        "type": "sap.ui.model.json.JSONModel"
       }
     },
-    "CustomerProperties": {
-      "type": "sap.ui.model.json.JSONModel"
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "viewPath": "stk.stk.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true,
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Default",
+          "pattern": "",
+          "target": "CustomerList"
+        },
+        {
+          "name": "CustomerDetails",
+          "pattern": "CustomerDetails/{CustomerID}",
+          "target": "CustomerDetails"
+        },
+        {
+          "name": "CreateCustomer",
+          "pattern": "CreateCustomer",
+          "target": "CreateCustomer"
+        },
+        {
+          "name": "Performance",
+          "pattern": "Performance",
+          "target": "Performance"
+        }
+      ],
+      "targets": {
+        "CustomerList": {
+          "viewName": "CustomerList"
+        },
+        "CustomerDetails": {
+          "viewName": "CustomerDetails"
+        },
+        "CreateCustomer": {
+          "viewName": "CreateCustomer"
+        },
+        "Performance": {
+          "viewName": "Performance"
+        }
+      }
     }
   },
-  "routing": {
-    "config": {
-      "routerClass": "sap.m.routing.Router",
-      "type": "View",
-      "viewType": "XML",
-      "viewPath": "stk.stk.view",
-      "controlId": "app",
-      "controlAggregation": "pages",
-      "async": true,
-      "clearControlAggregation": false
-    },
-    "routes": [
-      {
-        "name": "Default",
-        "pattern": "",
-        "target": "CustomerList"
-      },
-      {
-        "name": "CustomerDetails",
-        "pattern": "CustomerDetails/{CustomerID}",
-        "target": "CustomerDetails"
-      },
-      {
-       "name": "CreateCustomer",
-       "pattern": "CreateCustomer",
-       "target": "CreateCustomer"
-      },
-      {
-        "name": "Performance",
-        "pattern": "Performance",
-        "target": "Performance"
-      }
-    ],
-    "targets": {
-      "CustomerList": {
-        "viewName": "CustomerList"
-      },
-      "CustomerDetails": {
-        "viewName": "CustomerDetails"
-      },
-      "CreateCustomer":{
-        "viewName": "CreateCustomer"
-      },
-      "Performance": {
-        "viewName": "Performance"
-      }
-    }
+  "sap.cloud": {
+    "public": true,
+    "service": "stkstk"
   }
-}}
+}
