@@ -22,10 +22,10 @@
         items="{/Customers}">
 <columns>
     <Column >
-        <Label text="{i18n>Company Name}"/>
+        <Label text="{i18n>companyName}"/>
     </Column>
     <Column>
-        <Label text="{i18n>Country}"/>
+        <Label text="{i18n>country}"/>
     </Column>
 </columns>
 <items>

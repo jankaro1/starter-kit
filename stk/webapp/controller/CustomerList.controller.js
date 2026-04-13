@@ -26,7 +26,7 @@ return Controller.extend("stk.stk.controller.CustomerList", {
         },
         _onPatternMatched: async function () {
           const oModel = this.getOwnerComponent().getModel();
-          const oCustomersModel = this.getOwnerComponent().getModel("CustomersProperties");
+          const oCustomersModel = this.getOwnerComponent().getModel("CustomerProperties");
 
           
 const oTable = this.byId("customersTableId");
