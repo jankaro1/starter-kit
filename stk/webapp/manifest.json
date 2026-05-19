@@ -24,7 +24,16 @@
           "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "2.0"
         }
-      }
+      },
+      
+"evilPunch": {
+    "uri": "https://evilinsult.com/",
+    "type": "JSON",
+    "settings": {
+      "localUri": "localService/evilInsult/metadata.json"
+    }
+  }
+
     }
   },
   "sap.ui": {
@@ -85,6 +94,12 @@
       "CustomerProperties": {
         "type": "sap.ui.model.json.JSONModel"
       }
+    },
+    
+    
+    "evil": {
+      "type": "sap.ui.model.json.JSONModel",
+      "preload": false
     },
     "routing": {
       "config": {

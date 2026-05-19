@@ -41,8 +41,8 @@
                                     justifyContent="SpaceAround"
                                     alignItems="Center">
                                         <items>
-                                            <Button text="Motivate"/>
-                                            <Button text="Fire"/>
+                                            <Button text="Motivate" press = "onMotivate"/>
+                                            <Button text="Fire" press = "onFire"/>
                                         </items>
                                 </FlexBox>
                         </cells>

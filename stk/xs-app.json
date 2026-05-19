@@ -1,7 +1,15 @@
+
 {
   "welcomeFile": "/index.html",
   "authenticationMethod": "route",
   "routes": [
+    {
+      "source": "^/destination/(.*)$",
+      "target": "$1",
+      "destination": "$1",
+      "authenticationType": "none",
+      "csrfProtection": false
+    },
     {
       "source": "^/V2/(.*)$",
       "target": "/V2/$1",

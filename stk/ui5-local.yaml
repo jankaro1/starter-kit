@@ -32,6 +32,7 @@ server:
         backend:
           - path: /V2
             url: https://services.odata.org
+            #add path to evilinsult
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
